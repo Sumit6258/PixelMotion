@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You - Sorry</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f8b195, #f67280, #c06c84, #6c5b7b);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            overflow: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .message-box {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        /* Stars */
+        .star {
+            position: absolute;
+            top: -10px;
+            background: white;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            width: 10px;
+            height: 10px;
+            opacity: 0.8;
+            animation: fall 10s linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(100vh); }
+        }
+
+        /* Different star size and animation duration */
+        .star:nth-child(odd) {
+            width: 8px;
+            height: 8px;
+            animation-duration: 8s;
+            animation-timing-function: ease-in;
+        }
+
+        .star:nth-child(even) {
+            width: 12px;
+            height: 12px;
+            animation-duration: 12s;
+            animation-timing-function: ease-out;
+        }
+    </style>
+</head>
+<body>
+<div class="message-box">
+    <h1>Sorry Smritii</h1>
+    <p>Let’s forget all the bad happenings and move forward with peace. I apologise for my words and my actions that have made you anger & frustrated.</p>
+</div>
+
+<!-- Stars -->
+<div class="star" style="left: 10%;"></div>
+<div class="star" style="left: 20%;"></div>
+<div class="star" style="left: 30%;"></div>
+<div class="star" style="left: 40%;"></div>
+<div class="star" style="left: 50%;"></div>
+<div class="star" style="left: 60%;"></div>
+<div class="star" style="left: 70%;"></div>
+<div class="star" style="left: 80%;"></div>
+<div class="star" style="left: 90%;"></div>
+
+<script>
+    // Duplicate stars for more effect
+    for (let i = 0; i < 20; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.animationDuration = `${(Math.random() * 5) + 5}s`;
+        star.style.width = `${(Math.random() * 8) + 4}px`;
+        star.style.height = star.style.width;
+        document.body.appendChild(star);
+    }
+</script>
+</body>
+</html>
